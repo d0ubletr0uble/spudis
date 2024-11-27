@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spūdis</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                height: 100vh;
+            }
+            .screen {
+                display: none;
+            }
+            .screen.active {
+                display: block;
+            }
+        </style>
+        <script>
+            function handleSubmit(event) {
+                event.preventDefault();
+    
+                const num1 = document.getElementById('num1').value;
+                const num2 = document.getElementById('num2').value;
+                const num3 = document.getElementById('num3').value;
+    
+                console.log('Number 1:', num1);
+                console.log('Number 2:', num2);
+                console.log('Number 3:', num3);
+
+                document.getElementById('num1').value = '';
+                document.getElementById('num2').value = '';
+                document.getElementById('num3').value = '';
+            }
+        
+            function showScreen(screenNumber) {
+                const screens = document.querySelectorAll('.screen');
+                screens.forEach(screen => screen.classList.remove('active'));
+
+                const selectedScreen = document.getElementById('screen' + screenNumber);
+                selectedScreen.classList.add('active');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="screen1" class="screen active">
+            <h1>Hello world</h1>
+            <form onsubmit="handleSubmit(event)">
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1" name="num1" required><br><br>
+        
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2" name="num2" required><br><br>
+        
+                <label for="num3">Number 3:</label>
+                <input type="number" id="num3" name="num3" required><br><br>
+        
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="screen2" class="screen">
+            <h2>Thank You!</h2>
+            <p>Your numbers have been submitted successfully.</p>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="showScreen(1)">Go Back to Form</button>
+            <button onclick="showScreen(2)">Go to Confirmation</button>
+        </div>
+    </body>
+</html>
