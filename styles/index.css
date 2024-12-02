@@ -13,3 +13,7 @@ body {
 .screen.active {
     display: block;
 }
+
+button {
+    margin: 2%;
+}
