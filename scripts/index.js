@@ -4,8 +4,6 @@ if ('serviceWorker' in navigator) {
         .catch(error => { console.log('Service Worker registration failed:', error); });
 }
 
-document.getElementById('form1').addEventListener('submit', handleSubmit);
-
 function handleSubmit(event) {
     event.preventDefault();
 
@@ -29,3 +27,7 @@ function showScreen(screenNumber) {
     const selectedScreen = document.getElementById('screen' + screenNumber);
     selectedScreen.classList.add('active');
 }
+
+document.getElementById('form1').addEventListener('submit', handleSubmit);
+document.getElementById('button1').addEventListener('click', showScreen(1));
+document.getElementById('button2').addEventListener('click', showScreen(2));
