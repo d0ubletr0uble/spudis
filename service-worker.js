@@ -1,7 +1,7 @@
 const CACHE_NAME = "spudis";
 const urlsToCache = [
-  "/",
-  "/index.html",
+  "",
+  "index.html",
 ];
 
 // Install Service Worker
