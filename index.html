@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Spaudimo duomenų užrašinė">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
     <link rel="manifest" href="manifest.json">
     <title>Spūdis</title>
@@ -15,7 +15,7 @@
 <body>
     <div id="screen1" class="screen active">
         <h1>Hello world</h1>
-        <form onsubmit="handleSubmit(event)">
+        <form id="form1">
             <label for="num1">Number 1:</label>
             <input type="number" id="num1" name="num1" required><br><br>
 

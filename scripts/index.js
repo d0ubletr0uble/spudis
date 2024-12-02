@@ -4,6 +4,8 @@ if ('serviceWorker' in navigator) {
         .catch(error => { console.log('Service Worker registration failed:', error); });
 }
 
+document.getElementById('form1').addEventListener('submit', handleSubmit);
+
 function handleSubmit(event) {
     event.preventDefault();
 
