@@ -29,5 +29,5 @@ function showScreen(screenNumber) {
 }
 
 document.getElementById('form1').addEventListener('submit', handleSubmit);
-document.getElementById('button1').addEventListener('click', showScreen(1));
-document.getElementById('button2').addEventListener('click', showScreen(2));
+document.getElementById('button1').addEventListener('click', _ => showScreen(1));
+document.getElementById('button2').addEventListener('click', _ => showScreen(2));
