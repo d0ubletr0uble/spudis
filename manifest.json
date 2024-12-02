@@ -2,7 +2,7 @@
     "name": "Spūdis",
     "short_name": "Spūdis",
     "description": "Spaudimo duomenų užrašinė",
-    "start_url": "/index.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#F98888",
