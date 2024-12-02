@@ -1,38 +1,13 @@
-const CACHE_NAME = 'spudis';
-const urlsToCache = [
-  '',
-  'index.html',
-];
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
-// Install Service Worker
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
+const { precacheAndRoute, cleanupOutdatedCaches } = workbox.precaching;
 
-// Activate Service Worker
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cache => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);
-          }
-        })
-      );
-    })
-  );
-});
+precacheAndRoute([
+  { url: 'index.html', revision: null },
+  { url: 'syles/index.css', revision: null },
+  { url: 'scripts/index.js', revision: null },
+  { url: 'icons/icon-192x192.png', revision: null },
+  { url: 'icons/icon-512x512.png', revision: null },
+], { cleanUrls: false });
 
-// Fetch Cached Files
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
+cleanupOutdatedCaches();
