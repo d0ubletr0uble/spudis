@@ -18,3 +18,25 @@ body {
 button {
     margin: 2%;
 }
+
+input {
+    width: 50vw;
+    border-radius: 1em;
+    font-size: 1.5em;
+    border: none;
+    padding: 1em;
+    padding-left: 2.1em;
+    background: 0.5em /1.5em no-repeat #F3F3F3;
+}
+
+input[name="num1"] {
+    background-image: url("../icons/icon-192x192.png")
+}
+
+input[name="num2"] {
+    background-image: url("../icons/icon-192x192.png")
+}
+
+input[name="num3"] {
+    background-image: url("../icons/icon-192x192.png")
+}
